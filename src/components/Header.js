@@ -2,14 +2,6 @@ import React, { useState } from "react";
 
 
 function Header(props) {
-    function changeTheme() {
-        if (props.theme === "light") {
-            props.setTheme("dark");
-        } else {
-            props.setTheme("light");
-        }
-    };
-
     return (
         <div>
         <section className="theme-container">
