@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
 
 function Header(props) {
+  function changeTheme() {
+    if (props.theme === "theme") {
+        props.setTheme("theme.dark");
+    } else {
+        props.setTheme("theme");
+    }
+};
     return (
-        <div>
-        <section className="theme-container">
-          <button className="theme" id="theme" />
-        </section>
+      <section
+      className="theme-container">
+        <button 
+        class="theme" 
+        id="theme"
+        onClick={changeTheme}>
+        </button>
         <h1>My Habit Tracker</h1>
-      </div>
+        </section>
     );
   };
 
