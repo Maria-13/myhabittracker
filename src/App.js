@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
 
-function App(props) {
+function App() {
     return (
-      <div className="app stack">
+      <div className="App">
+         <section class="theme-container">
+
+<button class="theme" id="theme"></button>
+
+</section>
         <h1>My Habit Tracker</h1>
         <div className="habit-container"></div> 
         <form>
