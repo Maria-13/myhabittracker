@@ -18,7 +18,6 @@ function Header(props) {
         <h1>My Habit Tracker</h1>
       </div>
     );
-  }
-});
+  };
 
 export default Header;
