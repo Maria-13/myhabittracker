@@ -1,31 +1,36 @@
 import React, { useState } from "react";
 
-function AddHabit(props) {
-  const [habit, setHabit] = useState('');
 
-function handleSubmit(e) {
-    e.preventDefault();
-    if (!habit.trim()) {
-      return;
-    }
-    props.addHabit(habit);
-    setHabit("");
+function AddHabit(props) {
+  const [name, setName] = useState('');
+
+
+  function handleSubmit(e) {
+    props.addHabit(name);
+    setName("");
   }
 
+
   function handleChange(e) {
-    setHabit(e.target.value);
+    setName(e.target.value);
   }
 
   return (
     <div className="habit-container">
 
-    <form className="add-habit">
+    <form onSubmit={handleSubmit}
+    className="add-habit">
+      <label htmlFor="new-habit"
+      className="habit"></label>
       <input
-        className="habit"
         type="text" 
-        name="habit"
+        id="new-habit"
+        name="text"
         placeholder="Enter Habit Name"
-        required/>
+        required
+        value={name}
+        onChange={handleChange}
+        />
          <input
           type="number"
           name="reps"
@@ -33,7 +38,7 @@ function handleSubmit(e) {
           min="1"
           required
         />
-        <div class="frequency">
+        <div className="frequency">
           <label for="timeframe">Frequency: </label>
           <select name="timeframe" id="timeframe">
             <option value="Daily">Daily</option>
@@ -42,10 +47,15 @@ function handleSubmit(e) {
             <option value="Yearly">Yearly</option>
           </select>
         </div>
-        <input type="submit" value="+ Add Habit" />
+        <input 
+        type = "submit" 
+        value="+ Add Habit" 
+        className="habits button"
+        id={props.id}
+        onClick={handleSubmit}/>
       </form>
       </div>
   );
 }
 
-export default AddHabit;
+export default AddHabit; 

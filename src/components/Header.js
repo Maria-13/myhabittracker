@@ -1,35 +1,22 @@
-import React from "react";
+import { useState } from "react";
 
-const LightTheme = {
-className: ":root"
-};
+    
+      function Header(props) {
+        const [theme, setTheme] = useState("root");
 
-const DarkTheme = {
-  className: ":root.dark"
-};
-const themes = {
-  light: LightTheme,
-  dark: DarkTheme,
-}
-
-function Header(props) {
-  function changeTheme() {
-    if (props.theme === "light") {
-        props.setTheme("dark");
-    } else {
-        props.setTheme("light");
-    }
-};
-    return (
-      <section
-      className="theme-container">
-        <button 
-        className="theme" 
-        id="theme"
-        onClick={changeTheme}>
+        const themeToggler = () => {
+          theme === "root" ? setTheme("root.dark") : setTheme("root");
+        };
+        return (
+      <div
+        className="theme">
+        <button onClick={() => themeToggler()}
+        className="root" 
+        id="root"
+        value={theme}>
         </button>
-        </section>
-    );
-  };
+        </div>
+        );
+}
 
 export default Header;

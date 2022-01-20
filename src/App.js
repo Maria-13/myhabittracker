@@ -1,20 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import AddHabit from './components/AddHabit';
 import HabitList from './components/HabitList';
+import { nanoid } from "nanoid";
 
 
-function App() {
-    const [theme, setTheme] = useState("light")
+
+function App(props) {
+  const [habits, setHabits] = useState(props.habits);
+
+
+  const habitList = habits
+  .map(habit => (
+    <HabitList
+      id={habit.id}
+      name={habit.name}
+      completed={habit.completed}
+      key={habit.id}
+    />
+  ));
+
+  function addHabit(name) {
+    const newHabit = { id: "habit-" + nanoid(), name: name, completed: false };
+    setHabits([...habits, newHabit]);
+  }
+
     return (
       <div className="theme-container">
-        <Header 
-        theme={theme} setTheme={setTheme} />
+        <Header />
       <h1>My Habit Tracker</h1>
-      <AddHabit />
-      <HabitList />
+      <AddHabit
+       addHabit={addHabit}/>
+      <div className="habit input">
+      <ul>
+        {habitList}
+        </ul>
       </div>
-
+    </div>
     );
   }
 

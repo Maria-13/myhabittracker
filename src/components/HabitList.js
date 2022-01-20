@@ -1,9 +1,13 @@
 import React from "react";
 
 function HabitList(props) {
+    
   return (
-<ul class="habits">
-<li>Loading...</li>
+<ul className="habits li">
+ <div className="habits">
+     <input id="add-habit input"/>
+ </div>
+ 
 </ul>
   );
 }
