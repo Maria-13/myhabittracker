@@ -31,7 +31,7 @@ function App(props) {
       <h1>My Habit Tracker</h1>
       <AddHabit
        addHabit={addHabit}/>
-      <div className="add-habit input">
+      <div className="habit input">
       <ul>
         {habitList}
         </ul>
