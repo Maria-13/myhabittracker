@@ -172,16 +172,16 @@
     }
     
     .frequency {
-      width: 100%;
+      width: 80%;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       flex-direction: row;
     }
     .icons {
-      display: flex;
+      display: inside;
       align-items: center;
-      font-size: 24px;
+      font-size: 20px;
       cursor: pointer;
     }
     
