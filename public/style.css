@@ -102,6 +102,8 @@
       font-weight: 400;
       align-items: center;
       display: flex;
+      justify-content: space-between;
+      margin: 4px auto;
     }
     
     .habits label {
@@ -140,6 +142,11 @@
       border: 0;
       border-radius: 10px;
     }
+
+    .button-edit {
+      padding: 16px 22px;
+      background: none;
+    }
     
     .add-habit {
       width: 100%;
@@ -170,4 +177,19 @@
       align-items: center;
       justify-content: space-evenly;
       flex-direction: row;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .delete-icon {
+      margin-right: 5px;
+      color: #51C4D3;
+    }
+    
+    .edit-icon {
+      color: #51C4D3;
     }
